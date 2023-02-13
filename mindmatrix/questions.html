@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schools: Knowledge Test</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="partials/script/script.js"></script>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <style type="text/css">
+    /* Header Section */
+    header {
+      background-color: #D3D3D3;
+      text-align: center;
+      width: 100%;
+      position: fixed;
+      height: 160px;
+      top: 0px;
+    }
+
+    body {
+      font-family: Arial;
+      background-image: url("images/school.jpg"), url("images/school2.jpg"), url("images/school3.jpg"), url("images/school4.jpg");
+      background-size: 75%;
+    }
+
+
+    #stats-div {
+
+      float: right;
+      background-color: lightblue;
+      width: 400px;
+      margin-top: -110px;
+      margin-right: 25px;
+      padding: 10px;
+    }
+
+    /*****************/
+    body {
+      margin: 0px;
+      margin-top: 0px;
+    }
+
+    #wrapper {
+      margin: 0 auto;
+      border: 5px solid #000;
+      border-radius: 5px;
+      width: 1080px;
+      text-align: center;
+      overflow: scroll;
+      padding: 20px 0;
+      height: auto;
+      margin-top: 200px;
+
+    }
+
+    #q-wrapper {
+      margin: 10px auto;
+      background-color: lightblue;
+      width: 950px;
+      border-radius: 3px;
+      padding: 10px 30px;
+      height: auto;
+
+    }
+
+    form {
+      margin-top: 30px;
+      text-align: left;
+      width: 950px;
+      height: auto;
+      overflow: auto;
+
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 25px 0 10px 0 ;
+    }
+
+    input[type=radio] {
+      /* transform: scale(2.5); Causes super imposed problem with fixed/static header when scrolling up*/
+      padding: 0px;
+      margin: 5px;
+      width: 30px;
+      height: 18px;
+    }
+
+
+    .q-texts {
+      font-size: 20px;
+      color: #000;
+      margin: 15px 0 0 15px;
+    }
+
+    #result {
+      font-weight: bold;
+      color: #000;
+      font-size: 20px;
+    }
+  </style>
+
+</head>
+
+<body onload="toTalQuestions()">
+  <header>
+    <h1>Mental Health Test</h1>
+  </header>
+
+  <div id="wrapper">
+    <div id="q-wrapper">
+      <form>
+        <div>
+          <h3 id="question">Q1. How do you feel lately? (From past few weeks)
+          </h3>
+          <input type="radio" class="check2" name="q1" /><label class="q-texts">
+            I often feel sad for days like nothing is going right and frustrated.</label><br>
+          <input type="radio" class="check2" name="q1" /><label class="q-texts"> Get mood swings constantly and feel
+            nervous and restless when I see something new or unusual.
+          </label><br>
+          <input type="radio" class="check2" name="q1" /><label class="q-texts"> Constantly feel restless, anxious,
+            unmotivated, irritated, and frustrated.
+          </label><br>
+          <input type="radio" class="check2" name="q1" /><label class="q-texts"> Get mood swings but once or twice a day
+            feeling happy and satisfied at the end of the day.
+          </label><br>
+        </div>
+
+        <div>
+          <h3 id="question"> What are your sleep timings?
+
+
+            </h6>
+            <input type="radio" class="check2" name="q2" /><label class="q-texts"> 6-8 hours or more
+            </label><br>
+            <input type="radio" class="check2" name="q2" /><label class="q-texts">Irregular and varying sleep
+              timings(but mostly less than 6-7 hours) </label><br>
+            <input type="radio" class="check2" name="q2" /><label class="q-texts"> 0-4 hours(consistently for more than
+              2 weeks)</label><br>
+            <input type="radio" class="check2" name="q2" /><label class="q-texts">0-4 hours(for last 1 or 2 weeks)
+            </label><br>
+        </div>
+
+        <h3 id="question">How is your recent Apetitte?
+        </h3>
+        <input type="radio" class="check2" name="q3" /><label class="q-texts">
+          Not feeling satisfied with appetite constantly(always feeling that you have either overeaten or are still
+          hungry)</label><br>
+        <input type="radio" class="check2" name="q3" /><label class="q-texts">
+          Eat less food still feel as if the stomach is full or sometimes eat more than usual and still feel
+          hungry.</label><br>
+        <input type="radio" class="check2" name="q3" /><label class="q-texts"> Eating less than or more than regular for
+          more than 2 weeks and now that’s your regular appetite(change in appetite)
+        </label><br>
+        <input type="radio" class="check2" name="q3" /><label class="q-texts"> Regular appetite is followed or a proper
+          diet is followed
+        </label><br>
+
+        <h3 id="question">How are your Regular Body activities? (changes in external behavior)</h3>
+        <input type="radio" class="check2" name="q4" /><label class="q-texts"> Overreacting and irritative behavior,
+          angry outbursts, addictions</label><br>
+        <input type="radio" class="check2" name="q4" /><label class="q-texts"> Act clumsy, sweating, trembling, and
+          sudden chills and difficulty in speaking
+        </label><br>
+        <input type="radio" class="check2" name="q4" /><label class="q-texts"> Body movements are slowed, and thinking
+          and speaking capabilities are also slowed by addictions.
+        </label><br>
+        <input type="radio" class="check2" name="q4" /><label class="q-texts"> Nothing like mentioned above
+        </label><br>
+
+        <h3 id="question">Do you consume any of these: Tobacco, alcohol, unprescribed drugs(illegal ones), or addicted
+          to pornography?
+        </h3>
+        <input type="radio" class="check2" name="q5" /><label class="q-texts">On a regular basis(but started recently)
+        </label><br>
+        <input type="radio" class="check2" name="q5" /><label class="q-texts"> Used to do this regularly but recently
+          stopped it.
+        </label><br>
+        <input type="radio" class="check2" name="q5" /><label class="q-texts">On a regular basis(but started recently)
+        </label><br>
+        <input type="radio" class="check2" name="q5" /><label class="q-texts"> Once or twice a week or never.
+        </label><br>
+        <h3 id="question">What kind of thoughts do you usually get?
+
+        </h3>
+        <input type="radio" class="check2" name="q6" /><label class="q-texts"> The only negatives in situations are
+          highlighted, constant worrying, multiple racing thoughts, restlessness, and demotivating thoughts.</label><br>
+        <input type="radio" class="check2" name="q6" /><label class="q-texts">
+          A sense of incoming danger, panic thoughts, and trouble focusing anywhere else other than current worry.
+        </label><br>
+        <input type="radio" class="check2" name="q6" /><label class="q-texts"> Constant hopelessness, loff of pleasure
+          in activities, or excessively guilty and continuous suicidal thoughts.
+        </label><br>
+        <input type="radio" class="check2" name="q6" /><label class="q-texts">Normal Thoughts
+        </label><br>
+        <h3 id="question">Have you ever undergone any kind of treatment for any sort of psychological disorder?
+
+        </h3>
+        <input type="radio" class="check2" name="q7" /><label class="q-texts"> Yes (consulted a counselor for some
+          personal problems)
+        </label><br>
+        <input type="radio" class="check2" name="q7" /><label class="q-texts"> Yes (for some sort of anxiety problem)
+        </label><br>
+        <input type="radio" class="check2" name="q7" /><label class="q-texts"> Yes (for some sort of depression)
+        </label><br>
+        <input type="radio" class="check2" name="q7" /><label class="q-texts"> No
+        </label><br>
+
+      </form>
+    </div>
+    <button onclick="submittRes()">subbmit</button>
+
+
+  </div>
+</body>
+
+</html>
